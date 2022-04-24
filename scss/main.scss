@@ -1,0 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700;800;900&display=swap');
+$font: 'Inter', sans-serif;
+$logo-blue: #1F4A82;
+$dk-blue: #0D2F81;
+$lt-blue: #10F4FF;
+
+body {
+    font-family: $font;
+    font-weight: 300;
+    background: #fff;
+}

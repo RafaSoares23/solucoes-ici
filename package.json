@@ -1,0 +1,15 @@
+{
+  "name": "solucoes-teste",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Rafael Soares",
+  "license": "ISC",
+  "devDependencies": {
+    "sass": "^1.50.1"
+  }
+}
