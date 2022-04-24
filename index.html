@@ -10,14 +10,16 @@
     rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" 
     crossorigin="anonymous">
     <link rel="stylesheet" href="/css/main.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <script type="module" src="/js/main.js"></script>
 </head>
 <body>
-    <header>
+    <header id="header">
         <div class="container">
             <a href="#" class="logo">
                 <img src="./img/ici-logo.png" alt="ICI - Instituto Cidades Inteligentes">
             </a>
-            <button>
+            <button class="menu" type="button">
                 <div class="lines">
                     <span></span>
                     <span></span>
@@ -29,22 +31,24 @@
     </header>
 
     <section id="hero">
-        <div class="container flex">
-            <div class="text">
-                <h1>Conheça as soluções de TIC que desenvolvemos</h1>
-                <h4>assim garantir a satisfação do gestor público e do cidadão, entregando mais eficiência, modernidade, agilidade, integração, transparência e economia aos municípios brasileiros.</h4>
+        <div class="container">
+            <div class="line-hero flex">
+                <div class="text flex titulo">
+                    <h1>Conheça as soluções de TIC que desenvolvemos</h1>
+                    <h3>assim garantir a satisfação do gestor público e do cidadão, entregando mais eficiência, modernidade, agilidade, integração, transparência e economia aos municípios brasileiros.</h3>
+                </div>
+                <div class="figure solucoes flex">
+                    <img src="./img/solucoes-tic.svg" alt="Soluções TIC" class="soluctions">
+                </div>
             </div>
-            <div class="figure">
-                <img src="./img/solucoes-tic.svg" alt="Soluções TIC" class="soluctions">
-            </div>
-        </div>
-        <div class="container flex">
-            <div class="figure">
-                <img src="./img/analise.svg" alt="Análise" class="analytics">
-            </div>
-            <div class="text">
-                <h2>Ganhe qualidade em processos administrativos e arrecadação de tributos</h2>
-                <h3>com total adequação às normas e requisitos legais.</h3>
+            <div class="line-hero flex">
+                <div class="figure analise">
+                    <img src="./img/analise.svg" alt="Análise" class="analytics">
+                </div>
+                <div class="text flex subtitle">
+                    <h2>Ganhe qualidade em processos administrativos e arrecadação de tributos</h2>
+                    <h3 class="upper">com total adequação às normas e requisitos legais.</h3>
+                </div>
             </div>
         </div>
     </section>
@@ -126,5 +130,47 @@
             <p>© 2022. Todos os direitos reservados</p>
         </div>
     </footer>
+
+    <!-- Full screen modal -->
+    <div class="" style="display: none;" >
+            <div>
+				<div class="modal-flex">
+					<div class="links">
+						<ul>
+							<li>
+								<a href="#">Início</a>
+							</li>
+							<li>
+								<a href="#">Institucional</a>
+							</li>
+							<li>
+								<a href="#">Soluções</a>
+							</li>
+							<li>
+								<a href="#">Cases</a>
+							</li>
+							<li>
+								<a href="#">Notícias</a>
+							</li>
+							<li>
+								<a href="#">Carreiras</a>
+							</li>
+							<li>
+								<a href="#">Blog</a>
+							</li>
+						</ul>
+					</div>
+					<div class="search">
+								<div class="tituloPadrao">
+									<h3>O que você procura?</h3>
+								</div>
+								<div class="search-box">
+										<input name="search" id="seach" placeholder="Ex.: Atendimento ao Cidadão" type="search">
+										<button></button>
+                                </div>
+                    </div>
+                </div>
+            </div>
+    </div>
 </body>
 </html>
