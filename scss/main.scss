@@ -39,6 +39,10 @@ body {
 
     display: flex;
     align-items: center;
+    &.active {
+        position: fixed;
+        z-index: 8;
+    }
 
     .container {
         max-width: 90%;
@@ -77,15 +81,16 @@ body {
                 width: 30px;
 
                 span {
-                    &:first-child {
-                        width: 100%;
-                    }
-
                     display: block;
                     width: 80%;
                     height: 4px;
                     margin: 6px 0;
                     background-color: $dk-blue;
+                    transition: all ease-in-out 0.3s;
+
+                    &:first-child {
+                        width: 100%;
+                    }
                 }           
             }
 
@@ -103,6 +108,30 @@ body {
                 }
                 small {
                     color:$white;
+                }
+            }
+
+            &.active {
+                padding: 0.9rem 0.5rem;
+
+                .lines {
+                    width: 35px;
+
+                    span:nth-child(2) {
+                        opacity: 0;
+                      }
+                    span:nth-child(1) {
+                        transform: translateY(8px) rotate(45deg);
+                        margin: 0;
+                      }
+                    span:nth-child(3) {
+                        transform: translateY(-8px) rotate(-45deg);
+                        width: 100%;
+                        margin: -3px 0 0;
+                    }
+                }
+                small {
+                    display: none;
                 }
             }
         }
@@ -346,7 +375,7 @@ body {
             .btns-flex {
                 margin: 20px 0;
                 padding-top: 10px;
-                min-width: 1555px;
+                min-width: 1220px;
                 width: 100%;
             }
         }
@@ -715,31 +744,127 @@ section.tab {
 }
 .links-menu {
     position: fixed;
-    right: -100%;
-    top: 5rem;
+    left: -100%;
+    top: 90px;
     flex-direction: column;
-    background-color: #fff;
+    background-color: $dk-blue;
+    backdrop-filter: blur(8px);
     width: 100%;
-    border-radius: 10px;
+    padding: 3rem;
+    height: 90vh;
     text-align: center;
     transition: all ease-in-out 0.45s;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    z-index: 99;
+    @media (max-width: $oldDesktop) {
+        padding: 3rem 0.8rem;
+    }
+    @media (max-width: $phone-lg) {
+        flex-direction: column;
+    }
+
+    div {
+        flex: 1;
+    }
+
+    .list {
+        border-right: solid 1px white; 
+        
+        @media (max-width: $phone-lg){
+            width: 100%;
+            border-right: none;
+        }
+    }
 
     &.active {
-        right: 0;
-        background-color: #ffffffa1;
-        backdrop-filter: blur(11px);
+        left: 0;
+        background-color: rgb(7 14 82 / 84%);
     }
 
     ul {
         list-style-type: none;
         overflow: hidden;
         display: block;
-        width: 100%;
+        width: auto;
+        text-align: left;
+        margin: 0 14%;
+        @media (max-width: $oldDesktop) {
+            margin: 0 8%;
+        }
+        @media (max-width: $phone-lg) {
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
 
         li {
             float: none;
             height: auto;
+            margin: 0 0 5px;
             transition: all ease-in-out 0.2s;
+
+            a {
+                text-decoration: none;
+                color: $white;
+                font-weight: 600;
+                font-size: 22px;
+                @media (max-width: $tablet) {
+                    font-size: 18px;
+                }
+
+                &:hover {
+                    color: $lt-blue;
+                }
+            }
+          }
+      }
+
+      div.search {
+        @media (max-width: $phone-lg){
+            width: 100%;
+        }
+
+          .tituloPadrao {
+              h3 {
+                font-size: 32px;
+                color: $white;
+                @media (max-width: $tablet) {
+                    font-size: 22px;
+                }
+              }
+          }
+          .search-box {
+            margin: 3rem 4rem;
+            border-bottom: solid 2px white;
+            @media (max-width: $tablet) {
+                margin: 3rem 1rem;
+            }
+
+            #search {
+                width: 85%;
+                padding: 5px 10px;
+                background: transparent;
+                border: none;
+                color: white;
+                @media (max-width: 1160px) {
+                    width: 70%;
+                }
+                @media (max-width: $oldDesktop) {
+                    font-size: 13px;
+                }
+
+                &:focus-visible {
+                    outline: transparent auto 1px;;
+                }
+            }
+            .btn-search {
+                ion-icon {
+                    font-size: 30px;
+                    color: $white;
+                }
+            }
           }
       }
 }

@@ -1,20 +1,28 @@
 //Menu 
-// const menuIcone = document.querySelector(".menu");
-// const navMenu = document.querySelector(".links-menu");
-// const menuLinks = document.querySelectorAll(".menu-link");
-// // mobile menu
-// function mobileMenu() {
-//   menuIcone.classList.toggle("active");
-//   navMenu.classList.toggle("active");
-// };
-// function closeMenu() {
-//   menuIcone.classList.remove("active");
-//   navMenu.classList.remove("active");
-// };
-
-// menuIcone.addEventListener("click", mobileMenu);
-// menuLinks.forEach((nl) => nl.addEventListener("click", closeMenu));
-// menuIcone.addEventListener("click", );
+const header = document.getElementById('header');
+const menuIcone = document.querySelector(".menu");
+const navMenu = document.querySelector(".links-menu");
+const menuLinks = document.querySelectorAll(".menu-link");
+const formSearch = document.querySelector('form.search-box');
+const inputSearch = document.querySelector('#search');
+function mobileMenu() {
+  menuIcone.classList.toggle("active");
+  navMenu.classList.toggle("active");
+  header.classList.toggle("active");
+};
+function closeMenu() {
+  menuIcone.classList.remove("active");
+  navMenu.classList.remove("active");
+  header.classList.remove("active");
+};
+//Eventos
+menuIcone.addEventListener("click", mobileMenu);
+menuLinks.forEach((link) => link.addEventListener("click", closeMenu));
+formSearch.addEventListener('submit', (e) => {
+  e.preventDefault();
+  closeMenu();
+  inputSearch.blur();
+});
 
 // Cards Slider
 const swiperOptions = {
