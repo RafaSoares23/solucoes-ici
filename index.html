@@ -9,9 +9,11 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" 
     rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" 
     crossorigin="anonymous">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
     <link rel="stylesheet" href="/css/main.css">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-    <script type="module" src="/js/main.js"></script>
+    <!-- Swiper JS -->
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 </head>
 <body>
     <header id="header">
@@ -19,6 +21,26 @@
             <a href="#" class="logo">
                 <img src="./img/ici-logo.png" alt="ICI - Instituto Cidades Inteligentes">
             </a>
+            <!-- <nav class="links-menu">
+                <ul>
+                    <li class="menu-link"><a href="#">Início</a></li>
+                    <li class="menu-link"><a href="#">Institucional</a></li>
+                    <li class="menu-link"><a href="#">Soluções</a></li>
+                    <li class="menu-link"><a href="#">Cases</a></li>
+                    <li class="menu-link"><a href="#">Notícias</a></li>
+                    <li class="menu-link"><a href="#">Carreiras</a></li>
+                    <li class="menu-link"><a href="#">Blog</a></li>
+                </ul>
+                <div class="search">
+                    <div class="tituloPadrao">
+                        <h3>O que você procura?</h3>
+                    </div>
+                    <div class="search-box">
+                        <input name="search" id="seach" placeholder="Ex.: Atendimento ao Cidadão" type="search">
+                        <button class="btn search"><ion-icon name="search-circle-outline"></ion-icon></button>
+                    </div>
+                </div>
+            </nav> -->
             <button class="menu" type="button">
                 <div class="lines">
                     <span></span>
@@ -52,125 +74,360 @@
             </div>
         </div>
     </section>
-    <section id="sectors-menu">
-        <div class="sector">
+
+    <section id="setores-menu">
+        <div class="sec-title">
             <h4>Setores</h4>
         </div>
         <div class="sec-btns scrollx">
             <div class="btns-flex">
-                <button class="btn-sec">Administrativa e Financeira</button>
-                <button class="btn-sec">Cidadão</button>
-                <button class="btn-sec">Educação</button>
-                <button class="btn-sec">Inteligência</button>
-                <button class="btn-sec">Mobilidade</button>
-                <button class="btn-sec">Saúde</button>
-                <button class="btn-sec">Serviços</button>
-                <button class="btn-sec">Serviços</button>
-                <button class="btn-sec">Web</button>
+                <button class="btn-sec ativo" data-go="1">Administrativa e Financeira</button>
+                <button class="btn-sec" data-go="2">Cidadão</button>
+                <button class="btn-sec" data-go="3">Educação</button>
+                <button class="btn-sec" data-go="4">Saúde</button>
+                <button class="btn-sec" data-go="5">Serviços</button>
+                <button class="btn-sec" data-go="6">Tributária</button>
+                <button class="btn-sec" data-go="7">Web</button>
             </div>
         </div>
     </section>
-    <section id="cards-solucoes">
-        <div class="swiper mySwiper">
+
+    <section data-cont="1" class="tab cards-solucoes show" >
+        <div class="swiper admSwiper">
             <div class="swiper-wrapper">
-                <div class="swiper-slide">Slide 1</div>
-                <div class="swiper-slide">Slide 2</div>
-                <div class="swiper-slide">Slide 3</div>
-                <div class="swiper-slide">Slide 4</div>
+                <div class="swiper-slide card">
+                    <img src="./img/servicos/cartao-inteligente.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title">Cartão Inteligente</h5>
+                      <p class="card-text">Imagine um cartão que possa realizar tarefas da rotina administrativa e ainda efetuar compras em rede conveniada, com segurança e autonomia para o servidor público e mais gestão para o empregador...</p>
+                      <a href="#" class="btn btn-card">Saiba Mais</a>
+                    </div>
+                </div>
+                <div class="swiper-slide card">
+                    <img src="./img/servicos/compras-eletronicas.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title">Compras Eletrônicas</h5>
+                      <p class="card-text">A solução traz para a prefeitura a modernização dos processos administrativos de compras, nas modalidades Pregão Eletrônico e Registro de Preços...</p>
+                      <a href="#" class="btn btn-card">Saiba Mais</a>
+                    </div>
+                </div>
+                <div class="swiper-slide card" style="width: 18rem;">
+                    <img src="./img/servicos/contrato.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title">Contratos</h5>
+                      <p class="card-text">Permite a gestão completa dos contratos públicos, com o monitoramento e a programação de cada fase, desde a assinatura do contrato até a entrega dos bens ou serviços, e o controle de alertas sobre os vencimentos e esgotamentos...</p>
+                      <a href="#" class="btn btn-card">Saiba Mais</a>
+                    </div>
+                </div>
+                <div class="swiper-slide card">
+                    <img src="./img/servicos/diario-oficial.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title">Diário Oficial Eletrônico</h5>
+                      <p class="card-text">Diariamente, a administração precisa tornar públicas suas leis, portarias e nomeações, seus editais de licitações e outros atos oficiais. A solução Diário Oficial Eletrônico possibilita a padronização dos documentos oficiais...</p>
+                      <a href="#" class="btn btn-card">Saiba Mais</a>
+                    </div>
+                </div>
+                <div class="swiper-slide card">
+                    <img src="./img/servicos/financeiro.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title">Financeiro</h5>
+                      <p class="card-text">A solução financeira auxilia a prefeitura a melhorar os processos financeiros e contábeis de maneira simples e de acordo com as leis vigentes que os regulamentam, permitindo a integração com os Tribunais de Contas e garantindo...</p>             
+                      <a href="#" class="btn btn-card">Saiba Mais</a>
+                    </div>
+                </div>
+                <div class="swiper-slide card" >
+                    <img src="./img/servicos/guarda.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title">Guarda Municipal</h5>
+                      <p class="card-text">A solução de atendimento da Guarda Municipal permite o gerenciamento de ocorrências, proporcionando agilidade nas comunicações internas e redução dos tempos de resposta nos atendimentos ao cidadão...</p>
+                      <a href="#" class="btn btn-card">Saiba Mais</a>
+                    </div>
+                </div>
+                <div class="swiper-slide card">
+                    <img src="./img/servicos/manutencao-urbana.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title">Manutenção Urbana</h5>
+                      <p class="card-text">Permite gerenciar as atividades de manutenção dos espaços e serviços públicos, oferecendo melhor planejamento, moderna administração, controle, economia de tempo e de recursos financeiros...</p>
+                      <a href="#" class="btn btn-card">Saiba Mais</a>
+                    </div>
+                </div>
+                <div class="swiper-slide card">
+                    <img src="./img/servicos/materiais.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title">Materiais</h5>
+                      <p class="card-text">A solução atende à gestão de compras de materiais e de itens de almoxarifado. Permite o controle de fornecedores e de preços de produtos e serviços, mantendo o registro do histórico de valores cadastrados...</p>
+                      <a href="#" class="btn btn-card">Saiba Mais</a>
+                    </div>
+                </div>
+                <div class="swiper-slide card">
+                    <img src="./img/servicos/obras.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title">Obras</h5>
+                      <p class="card-text">A solução de obras possibilita à prefeitura a fiscalização das etapas de execução das obras públicas e o registro das informações essenciais relativas a elas...</p>
+                      <a href="#" class="btn btn-card">Saiba Mais</a>
+                    </div>
+                </div>
+                <div class="swiper-slide card">
+                    <img src="./img/servicos/patrimonio.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title">Patrimônio</h5>
+                      <p class="card-text">A solução Patrimônio permite o controle e o gerenciamento de todos os bens móveis e imóveis das entidades da administração pública direta e indireta...</p>
+                      <a href="#" class="btn btn-card">Saiba Mais</a>
+                    </div>
+                </div>
+                <div class="swiper-slide card">
+                    <img src="./img/servicos/frota.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title">Veículos</h5>
+                      <p class="card-text">A solução Veículos permite a gestão das frotas próprias ou terceirizadas que realizam serviços ao município. É possível registrar informações como placa, marca, modelo...</p>
+                      <a href="#" class="btn btn-card">Saiba Mais</a>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-pagination"></div>
+        </div>
+    </section>
+
+    <section data-cont="2" class="tab cards-solucoes">
+        <div class="swiper cidadaoSwiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide card">
+                    <img src="./img/servicos/att-virtual.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title">Atendimento Virtual</h5>
+                      <p class="card-text">Solução completa de atendimento ao cidadão via chat robotizado ou humano. Proporciona maior escala de atendimento, sem filas de espera, com registro das informações de forma rápida e eficaz...</p>
+                      <a href="#" class="btn btn-card">Saiba Mais</a>
+                    </div>
+                </div>
+                <div class="swiper-slide card">
+                    <img src="./img/servicos/business-inteligence.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title">Business Intelligence (BI)</h5>
+                      <p class="card-text">Ferramenta de Business Intelligence que realiza o monitoramento de indicadores de desempenho referentes à demanda de serviços prestados à comunidade. Os gestores têm acesso aos comparativos de dados...</p>
+                      <a href="#" class="btn btn-card">Saiba Mais</a>
+                    </div>
+                </div>
+                <div class="swiper-slide card">
+                    <img src="./img/servicos/municipal.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title">Central de Relacionamento Municipal</h5>
+                      <p class="card-text">Por meio de contato direto com o cidadão, a CRM coleta percepções sobre os serviços públicos municipais e ainda informa as ações do governo local aos moradores do município...</p>
+                      <a href="#" class="btn btn-card">Saiba Mais</a>
+                    </div>
+                </div>
+                <div class="swiper-slide card">
+                    <img src="./img/servicos/att-cidadao.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title">Atendimento ao Cidadão</h5>
+                      <p class="card-text">Plataforma completa de relacionamento com a administração pública que propicia a participação do cidadão. Viabiliza os processos de contact center...</p>
+                      <a href="#" class="btn btn-card">Saiba Mais</a>
+                    </div>
+                </div>
+            <div class="swiper-pagination"></div>
+            </div>
+        </div>
+    </section>
+
+    <section data-cont="3" class="tab cards-solucoes">
+        <div class="swiper educacaoSwiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide card">
+                    <img src="./img/servicos/collage.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title">Educação</h5>
+                      <p class="card-text">A Solução de Educação do ICI oferece ferramentas para a organização dos processos administrativos e acadêmicos, gerando relatórios específicos e gerenciais para o acompanhamento...</p>
+                      <a href="#" class="btn btn-card">Saiba Mais</a>
+                    </div>
+                </div>
+                <div class="swiper-slide card">
+                    <img src="./img/servicos/education.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title">Cadastro Online</h5>
+                      <p class="card-text">A solução permite que os pais ou responsáveis cadastrem as intenções de vagas para educação infantil para crianças de 0 a 6 anos. Possibilita ainda que as intenções sejam ordenadas com base em critérios preestabelecidos...</p>
+                      <a href="#" class="btn btn-card">Saiba Mais</a>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-pagination"></div>
+        </div>
+    </section>
+    <section data-cont="4" class="tab cards-solucoes">
+        <div class="swiper saudeSwiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide card">
+                    <img src="./img/servicos/saude.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title">Saúde</h5>
+                      <p class="card-text">Utilizando recursos avançados de TI, a solução de Saúde, além de atender as diretrizes preconizadas pelo Ministério da Saúde, oferece aos gestores municipais um conjunto de ferramentas essenciais..</p>
+                      <a href="#" class="btn btn-card">Saiba Mais</a>
+                    </div>
+                </div>
+                <div class="swiper-slide card">
+                    <img src="./img/servicos/protecao.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title">Proteção Animal</h5>
+                      <p class="card-text">A estimativa da Organização Mundial da Saúde é de que existam mais de 30 milhões de animais abandonados no Brasil...</p>
+                      <a href="#" class="btn btn-card">Saiba Mais</a>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-pagination"></div>
+        </div>
+    </section>
+    <section data-cont="5" class="tab cards-solucoes">
+        <div class="swiper servicosSwiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide card">
+                    <img src="./img/servicos/tic.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title">TIC para Gestão Pública</h5>
+                      <p class="card-text">A Consultoria em TIC para Gestão Pública apresenta como foco principal o planejamento de governança, de projetos e de serviços de TIC, aplicáveis no contexto das diferentes...</p>
+                      <a href="#" class="btn btn-card">Saiba Mais</a>
+                    </div>
+                </div>
+                <div class="swiper-slide card">
+                    <img src="./img/servicos/mail.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title">Correio Eletrônico</h5>
+                      <p class="card-text">Serviço de comunicação eficiente, simples e integrado de e-mail colaborativo, que consiste em uma plataforma completa para o controle, compartilhamento e interação...</p>
+                      <a href="#" class="btn btn-card">Saiba Mais</a>
+                    </div>
+                </div>
+                <div class="swiper-slide card">
+                    <img src="./img/servicos/datacenter.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title">Data Center</h5>
+                      <p class="card-text">O Data Center do ICI oferece mais segurança, produtividade e economia para as organizações públicas que precisam de infraestrutura de tecnologia da informação e comunicação.</p>
+                      <a href="#" class="btn btn-card">Saiba Mais</a>
+                    </div>
+                </div>
+                <div class="swiper-slide card">
+                    <img src="./img/servicos/wifi.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title">Wi-fi Público</h5>
+                      <p class="card-text">Dados do IBGE apontam que mais de 80% dos domicílios brasileiros têm acesso à internet. Como forma de manter a conectividade em todos os lugares, a tendência é investir em programas...</p>
+                      <a href="#" class="btn btn-card">Saiba Mais</a>
+                    </div>
+                </div>
+                <div class="swiper-slide card">
+                    <img src="./img/servicos/processo-juridico.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title">eGPJ</h5>
+                      <p class="card-text">A solução eGPJ – Gestão de Processos Judiciais Eletrônicos centraliza e integra em um único ambiente as demandas e atividades de responsabilidade dos procuradores municipais...</p>
+                      <a href="#" class="btn btn-card">Saiba Mais</a>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-pagination"></div>
+        </div>
+    </section>
+    <section data-cont="6" class="tab cards-solucoes">
+        <div class="swiper tributariaSwiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide card">
+                    <img src="./img/servicos/iss.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title">ISS</h5>
+                      <p class="card-text">O ISS permite à prefeitura fiscalizar e controlar os tributos fiscais referentes aos serviços prestados no município, contribuindo, dessa maneira, com o aumento da arrecadação...</p>
+                      <a href="#" class="btn btn-card">Saiba Mais</a>
+                    </div>
+                </div>
+                <div class="swiper-slide card">
+                    <img src="./img/servicos/tributos.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title">Tributos</h5>
+                      <p class="card-text">Oferece uma moderna solução para a gestão dos tributos municipais por meio do cadastro de todas as informações referentes ao espaço municipal e suas modificações...</p>
+                      <a href="#" class="btn btn-card">Saiba Mais</a>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-pagination"></div>
+        </div>
+    </section>
+    <section data-cont="7" class="tab cards-solucoes">
+        <div class="swiper webSwiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide card">
+                    <img src="./img/servicos/muralha-digital.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title">Muralha Digital</h5>
+                      <p class="card-text">O investimento em segurança pública está diretamente relacionado com a qualidade de vida dos cidadãos, uma vez que gera oportunidade de acompanhamento...</p>
+                      <a href="#" class="btn btn-card">Saiba Mais</a>
+                    </div>
+                </div>
+                <div class="swiper-slide card">
+                    <img src="./img/servicos/portal.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title">Portais</h5>
+                      <p class="card-text">Criada para atender de modo específico as demandas dos órgãos públicos e das prefeituras, a solução de portais sob demanda oferece total personalização...</p>
+                      <a href="#" class="btn btn-card">Saiba Mais</a>
+                    </div>
+                </div>
+                <div class="swiper-slide card">
+                    <img src="./img/servicos/polis.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title">Solução Polis</h5>
+                      <p class="card-text">A solução Polis do ICI oferece para as prefeituras municipais uma ferramenta de sites que atende os preceitos da arquitetura da informação, como navegabilidade, usabilidade e acessibilidade efetivas...</p>
+                      <a href="#" class="btn btn-card">Saiba Mais</a>
+                    </div>
+                </div>
             </div>
             <div class="swiper-pagination"></div>
         </div>
     </section>
 
     <section id="cta">
-        <div class="container boxpurple">
-            <div class="flex-cta">
-                <div class="text cta">
+        <div class="container purple-box">
+            <div class="flex">
+                <div class="text-cta">
                     <h2>Tudo isso elaborado por um time de profissionais capacitados para desenvolver, implementar e integrar as mais avançadas tecnologias</h2>
-                    <button class="cta-btn">Entre em Contato!</button>
+                    <a class="btn btn-cta">Entre em Contato!</a>
                 </div>
-                <div class="figure cta">
+                <div class="figure-cta">
                     <img src="./img/companhia.svg" alt="ICI Companhia">
                 </div>
             </div>
         </div>
     </section>
 
-    <footer>
-        <div class="flex">
-            <div>
-                <a href="#">
-                    <img src="./img/ici_footer.png" alt="ICI">
-                </a>
-            </div>
-            <div>
-                <ul class="footer-links">
-                    <li><a href="#">Carreiras</a></li>
-                    <li><a href="#">Fornecedores</a></li>
-                    <li><a href="#">Service Desk</a></li>
-                    <li><a href="#">Fale Conosco</a></li>
-                </ul>
-            </div>
-            <div class="certificações">
-                <h5>Certificações</h5>
-                <img src="./img/certificacoes.png" alt="certificacoes">
-            </div>
-            <div class="social">
-                <ul class="socialmedia">
-                    <li><a href="#"><img src="./img/facebook.svg" alt="facebook"></a></li>
-                    <li><a href="#"><img src="./img/twitter.svg" alt="facebook"></a></li>
-                    <li><a href="#"><img src="./img/linkedin.svg" alt="facebook"></a></li>
-                    <li><a href="#"><img src="./img/youtube.svg" alt="facebook"></a></li>
-                    <li><a href="#"><img src="./img/instagram.svg" alt="facebook"></a></li>
-                </ul>
-            </div>
-        </div>
-        <div class="bottom">
-            <p>Rua São Pedro, 910 - 80035-020 - Cabral - Curitiba, PR | Fones: (41) 3074-6200 | (41) 3350-6200</p>
-            <p>© 2022. Todos os direitos reservados</p>
-        </div>
-    </footer>
-
-    <!-- Full screen modal -->
-    <div class="" style="display: none;" >
-            <div>
-				<div class="modal-flex">
-					<div class="links">
-						<ul>
-							<li>
-								<a href="#">Início</a>
-							</li>
-							<li>
-								<a href="#">Institucional</a>
-							</li>
-							<li>
-								<a href="#">Soluções</a>
-							</li>
-							<li>
-								<a href="#">Cases</a>
-							</li>
-							<li>
-								<a href="#">Notícias</a>
-							</li>
-							<li>
-								<a href="#">Carreiras</a>
-							</li>
-							<li>
-								<a href="#">Blog</a>
-							</li>
-						</ul>
-					</div>
-					<div class="search">
-								<div class="tituloPadrao">
-									<h3>O que você procura?</h3>
-								</div>
-								<div class="search-box">
-										<input name="search" id="seach" placeholder="Ex.: Atendimento ao Cidadão" type="search">
-										<button></button>
-                                </div>
-                    </div>
+    <footer id="footer">
+        <div class="container">
+            <div class="top flex">
+                <div>
+                    <a href="#">
+                        <img src="./img/ici_footer.png" class="logo-footer" alt="ICI">
+                    </a>
+                </div>
+                <div>
+                    <ul class="footer-links">
+                        <li><a href="#">Carreiras</a></li>
+                        <li><a href="#">Fornecedores</a></li>
+                        <li><a href="#">Service Desk</a></li>
+                        <li><a href="#">Fale Conosco</a></li>
+                    </ul>
+                </div>
+                <div class="certificacoes">
+                    <h6>Certificações</h6>
+                    <img src="./img/certificacoes.png" alt="certificacoes">
+                </div>
+                <div class="social">
+                    <ul class="socialmedia">
+                        <li><a href="#"><img src="./img/facebook.svg" alt="facebook"></a></li>
+                        <li><a href="#"><img src="./img/twitter.svg" alt="facebook"></a></li>
+                        <li><a href="#"><img src="./img/linkedin.svg" alt="facebook"></a></li>
+                        <li><a href="#"><img src="./img/youtube.svg" alt="facebook"></a></li>
+                        <li><a href="#"><img src="./img/instagram.svg" alt="facebook"></a></li>
+                    </ul>
                 </div>
             </div>
-    </div>
+            <div class="bottom">
+                <p>Rua São Pedro, 910 - 80035-020 - Cabral - Curitiba, PR | Fones: (41) 3074-6200 | (41) 3350-6200</p>
+                <p>© 2022. Todos os direitos reservados</p>
+            </div>
+        </div>
+    </footer>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script type="module" src="/js/main.js"></script>
 </body>
 </html>
